@@ -1,0 +1,114 @@
+//Q1 - Given an array of numbers, use the map function with an arrow function to square each element of the array.
+
+const array = [12, 23, 33, 54, 76, 98, 24];
+array.map((num) => {
+  let square = num * num;
+  console.log(square);
+  return square;
+});
+
+// - Write a JavaScript function that takes a student's score as a parameter and returns their grade (A, B, C, D, or F) using a series of ternary operators..
+
+const grade = (score) => {
+  return score >= 90
+    ? "A"
+    : score >= 80
+    ? "B"
+    : score >= 70
+    ? "C"
+    : score >= 60
+    ? "D"
+    : "F";
+};
+console.log(grade(70));
+
+// Create an object representing a car with properties like Company name, model, and year. Write a function to change the car's year property. Also use object destructuring to extract and print the car's Model and Year.
+
+const car = {
+  CompanyName: "Toyota",
+  model: "Legender 4x4",
+  year: 2023,
+};
+
+const changeYear = (car) => {
+  car.year = 2024;
+  const { model, year } = car;
+  console.log(model, year);
+};
+
+changeYear(car);
+
+// Q4 - Given an array of numbers, use the filter function to create a new array containing only the prime numbers
+
+const numbers = [1, 2, 34, 57, 23, 21, 15, 17];
+const primeNumbers = numbers.filter((num) =>
+  num <= 1
+    ? false
+    : (function () {
+        for (let i = 2; i < num; i++) {
+          if (num % i === 0) {
+            return false; // Not prime
+          }
+        }
+        return true; // Prime
+      })()
+);
+
+console.log(primeNumbers);
+
+
+// Q5 -  State different use cases of map, filter and reduce functions.
+
+/*
+MAP
+Format Data: Change the structure of data (e.g., format dates, create full names).
+Scale Values: Adjust numerical values (e.g., apply discounts to prices).
+Convert to Strings: Change elements to strings (e.g., convert numbers to their string representations).
+
+
+FILTER
+Remove Duplicates: Filter unique elements from an array.
+Find Outliers: Identify and exclude outliers from datasets.
+Filter by Criteria: Select items based on specific criteria (e.g., products in stock, students with passing grades).
+
+
+REDUCE
+Calculate Average: Compute the average value of an array.
+Flatten Arrays: Combine nested arrays into a single array.
+Group Data: Organize data into groups based on a key (e.g., count occurrences of items).
+*/
+
+
+// Q6 - Write an asynchronous function using async-await  to fetch data from an API (you can use the JSONPlaceholder API) and log the result.
+
+const fetchData  = async (api) =>{
+    const data = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+    const json = await data.json()
+    console.log(json);
+    
+}
+fetchData();
+
+
+//  - Define a nested object representing a person with properties like name, address, and contact. Use optional chaining to safely access the person's phone number, even if the contact property is missing.
+const person = {
+    name: {
+        firstName: "John",
+        lastName: "Doe"
+    },
+    address: {
+        street: "123 Main St",
+        city: "Anytown",
+        state: "CA",
+        zip: "12345"
+    },
+    contactDetails: {
+        phone: "555-1234",
+        email: "john.doe@example.com"
+    }
+};
+
+const names = person.contact?.phone
+console.log(names);
+
+
