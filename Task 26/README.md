@@ -10,15 +10,15 @@ This is a simple Node.js server showcasing different routes for Upskill Mafia as
 
 - ## Demo
 ### Video
-[![Demo Video](link_to_thumbnail_image)](link_to_your_video)
+[![Demo Video] (https://github.com/iamnabeelrahman/UpSkillMadia-Tasks/blob/main/Task%2026/task26.mp4)
 
 ### Images
-![Home](home.png)
-![About](about.png)
-![Contact](contact.png)
+![Home] (https://github.com/iamnabeelrahman/UpSkillMadia-Tasks/blob/main/Task%2026/home.png)
+![About] https://github.com/iamnabeelrahman/UpSkillMadia-Tasks/blob/main/Task%2026/about.png)
+![Contact] (https://github.com/iamnabeelrahman/UpSkillMadia-Tasks/blob/main/Task%2026/Contact.png)
 
 ## Getting Started
 To run the server, use the following command:
 
 ```bash
-node yourFile.js
+node index.js
