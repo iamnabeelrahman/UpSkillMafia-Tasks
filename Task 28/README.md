@@ -48,7 +48,7 @@ The backend has followinf features-
 
    ## Challenges Faced
 
-1. **Input Validation**: One of the major challenges was ensuring the integrity of the data being sent to the API. I used the Zod library to validate the request payloads, which helped catch invalid data early and provide meaningful error messages.
+ **Input Validation**: One of the major challenges was ensuring the integrity of the data being sent to the API. I used the Zod library to validate the request payloads, which helped catch invalid data early and provide meaningful error messages.
 
 
 
