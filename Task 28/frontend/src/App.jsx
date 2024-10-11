@@ -10,7 +10,7 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/todos")
+    fetch("https://todo-backend-hc8l.onrender.com/todos")
         .then(async function(res) {
             const json = await res.json();
             setTodos(json.todos);
