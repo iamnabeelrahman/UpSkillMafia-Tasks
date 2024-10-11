@@ -1,15 +1,20 @@
 const mongoose = require("mongoose");
 
+// Use environment variable for MongoDB connection
+const mongoUrl = process.env.MONGODB_URL || "mongodb://localhost:27017/todos";
+mongoose.connect(mongoUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
-mongoose.connect("mongodb+srv://Nabeel:Nusrat%4025@nabeelcluster.qoyfq2x.mongodb.net/todos")
 const todosSchema = mongoose.Schema({
     title: String,
     description: String,
     completed: Boolean
-})
+});
 
 const todo = mongoose.model('todos', todosSchema);
 
 module.exports = {
     todo
-}
+};
