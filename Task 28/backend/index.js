@@ -8,6 +8,13 @@
     app.use(express.json());
     app.use(cors());
 
+    app.get("/", function(req, res){
+        const todo = "Go to /todo for creating todo";
+        const todos = "Go to /todos for getting all todo"
+        const completed = "Go to /completed making the todo completed"
+        const delete1 = "Go to /delete to delete todocompleted"
+        res.send(`<h1> Welcome to the Todo API!</h1> </br> ${todo} </br>${todos} </br>${completed} </br>${delete1}`);
+    })
     app.post("/todo", async (req, res) => {
         const createPayload = req.body;
         const parsedPayload = createTodo.safeParse(createPayload);
