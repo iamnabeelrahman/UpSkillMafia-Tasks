@@ -3,7 +3,7 @@ import React from 'react';
 export function Todos({ todos, setTodos }) {
     const handleMarkAsCompleted = async (id) => {    
         try {
-            const response = await fetch("http://localhost:3000/completed", {                
+            const response = await fetch("https://todo-backend-hc8l.onrender.com/completed", {                
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
@@ -27,7 +27,7 @@ export function Todos({ todos, setTodos }) {
 
     const handleDeleteTodo = async (id) => {
         try {
-            const response = await fetch(`http://localhost:3000/delete/${id}`, {
+            const response = await fetch(`https://todo-backend-hc8l.onrender.com/delete/${id}`, {
                 method: "DELETE",
             });
 
@@ -48,6 +48,7 @@ export function Todos({ todos, setTodos }) {
 
 
 
+
     return (
         <div>
             {todos.map(todo => (
@@ -63,6 +64,8 @@ export function Todos({ todos, setTodos }) {
                     </button>
                 </div>
             ))}
+
+            
         </div>
     );
 }
