@@ -69,6 +69,9 @@ This is a full-stack To-Do List application built with Node.js, Express, MongoDB
 - The backend will be available at `http://localhost:3000`.
 - The frontend will be available at `http://localhost:5173`.
 
+Deployed Application
+You can access the deployed application at: https://todo-frontend-ek0e.onrender.com
+
 ## Challenges Faced
 
 **Input Validation**: One of the major challenges was ensuring the integrity of the data being sent to the API. I used the Zod library to validate the request payloads, which helped catch invalid data early and provide meaningful error messages.
