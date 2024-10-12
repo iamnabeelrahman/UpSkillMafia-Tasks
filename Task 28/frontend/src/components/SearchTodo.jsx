@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../css/SearchTodo.css'; 
 
 const SearchTodo = () => {
   const [title, setTitle] = useState('');
@@ -25,7 +26,8 @@ const SearchTodo = () => {
   };
 
   return (
-    <div>
+    <div className="container" style={{display: inline-block}}>
+        <div className="margin-div">
       <h1>Search Your Todo</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -53,6 +55,7 @@ const SearchTodo = () => {
         </div>
       )}
       {response.error && <p>{response.error}</p>}
+    </div>
     </div>
   );
 };
