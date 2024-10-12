@@ -1,7 +1,7 @@
 const { log } = require('console');
 const express = require('express'); 
 const fs = require('fs'); 
-require('dotenv').config(); // Load .env file
+require('dotenv').config();
 
 const app = express(); 
 const PORT = process.env.PORT || 3000;
@@ -52,7 +52,6 @@ app.get('/videos/:filename', (req, res) => {
     }
 });
 
-// Starting the server on port 3000
 app.listen(PORT, () => {
     console.log('Server is listening on port 3000'); 
 });
