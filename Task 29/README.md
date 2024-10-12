@@ -48,3 +48,11 @@ During the integration of the backend and frontend, I encountered the following 
 2. File Path Management:
    -Ensuring the correct file paths for video files was challenging. I had to carefully structure my project folders and update the videoFileMap accordingly.
 
+
+## Links
+
+- **Deployed Backend:** [https://upskillmadia-tasks.onrender.com/](https://upskillmadia-tasks.onrender.com/)
+- **Deployed Frontend:** [https://tasks-29-frontend.onrender.com/](https://tasks-29-frontend.onrender.com/)
+- **Backend GitHub Repository:** [https://github.com/iamnabeelrahman/UpSkillMadia-Tasks/tree/main/Task%2029/backend](https://github.com/iamnabeelrahman/UpSkillMadia-Tasks/tree/main/Task%2029/backend)
+
+
