@@ -1,7 +1,10 @@
+const { log } = require('console');
 const express = require('express'); 
 const fs = require('fs'); 
+require('dotenv').config(); // Load .env file
 
 const app = express(); 
+const PORT = process.env.PORT || 3000;
 
 const videoFileMap = {
     'cat': 'videos/cat.mp4',
@@ -13,6 +16,8 @@ const videoFileMap = {
 app.get('/videos/:filename', (req, res) => {
     const fileName = req.params.filename; 
     const filePath = videoFileMap[fileName];
+    console.log(fileName);
+    
 
     if (!filePath) { 
         return res.status(404).send('File not found'); 
@@ -48,6 +53,6 @@ app.get('/videos/:filename', (req, res) => {
 });
 
 // Starting the server on port 3000
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('Server is listening on port 3000'); 
 });
