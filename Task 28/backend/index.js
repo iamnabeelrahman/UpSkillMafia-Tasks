@@ -1,12 +1,14 @@
     const express = require("express");
-    const { createTodo, updateTodo } = require("./types");
+    const { createTodo, updateTodo, querySchema } = require("./types");
     const { todo } = require("./database");
     const app = express();
     const cors = require("cors");
 
-    const PORT = process.env.PORT || 3000;
+    const PORT =3000;
     app.use(express.json());
     app.use(cors());
+
+
 
     app.get("/", function(req, res){
         const todo = "Go to /todo for creating todo";
@@ -15,6 +17,8 @@
         const delete1 = "Go to /delete to delete todocompleted"
         res.send(`<h1> Welcome to the Todo API!</h1> </br> ${todo} </br>${todos} </br>${completed} </br>${delete1}`);
     })
+
+    
     app.post("/todo", async (req, res) => {
         const createPayload = req.body;
         const parsedPayload = createTodo.safeParse(createPayload);
@@ -84,6 +88,51 @@
             msg: "Todo deleted successfully!",
         });
     });
+
+
+
+// Endpoint for updating task details (title, description)
+app.put("/update/:id", async (req, res) => {
+    const { id } = req.params;
+    const { title, description } = req.body;
+
+    const updatedTodo = await todo.updateOne(
+        { _id: id }, // Find the todo by ID
+        { $set: { title: title, description: description } } // Update title and description
+    );
+
+    if (updatedTodo.modifiedCount === 0) {
+        return res.status(404).json({ msg: "Todo not found or no changes made." });
+    }
+
+    res.json({
+        msg: "Todo updated successfully!",
+    });
+});
+
+
+// Endpoint for searching tasks by title or description
+// Create a search endpoint  
+app.get('/search', async (req, res) => {  
+    const title = req.query.title; // Get the search query from the URL  
+    const parsedTitle = querySchema.safeParse({ title }); 
+
+    if (!parsedTitle.success) {
+        return res.status(400).json({ error: parsedTitle.error.errors });        
+    }
+
+    try {  
+        const results = await todo.find({ title: new RegExp(parsedTitle.data.title, 'i') }); // Case-insensitive search  
+        console.log(results);  // Log results for debugging
+        res.json({ results });  // Wrap results in an object
+    } catch (error) {  
+        console.error(error);  // Log the error for debugging
+        res.status(500).json({ error: 'An error occurred while searching.' });  
+    }  
+});
+
+     
+
 
     app.listen(PORT, () => {
         console.log(`Server is listening to ${PORT}`);
