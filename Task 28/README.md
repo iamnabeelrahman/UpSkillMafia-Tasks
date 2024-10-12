@@ -6,6 +6,7 @@ This is a full-stack To-Do List application built with Node.js, Express, MongoDB
 
 - Users can create to-dos.
 - Users can view their existing to-dos.
+- User can search existing todo.
 - Users can mark a to-do as completed.
 - Users can delete a to-do from their list.
 
