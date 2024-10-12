@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.margin-div {
+  margin: 20px; /* Adjust the margin as needed */
+}
