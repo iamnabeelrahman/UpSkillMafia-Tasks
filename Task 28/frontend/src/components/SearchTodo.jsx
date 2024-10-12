@@ -26,7 +26,7 @@ const SearchTodo = () => {
   };
 
   return (
-    <div className="container" style={{display: inline-block}}>
+    <div className="container" >
         <div className="margin-div">
       <h1>Search Your Todo</h1>
       <form onSubmit={handleSubmit}>
