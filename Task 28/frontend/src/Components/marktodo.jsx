@@ -3,7 +3,7 @@ import React from 'react';
 export function Todos({ todos, setTodos }) {
     const handleMarkAsCompleted = async (id) => {    
         try {
-            const response = await fetch("http://localhost:8000/completed", {                
+            const response = await fetch("https://todo-task28-frontend.onrender.com/completed", {                
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
