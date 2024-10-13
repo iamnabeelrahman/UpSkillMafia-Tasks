@@ -1,8 +1,23 @@
-# React + Vite
+### Frontend Setup
+1. Navigate to the frontend directory:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+2. Install dependencies:
 
-Currently, two official plugins are available:
+3. Run the development server:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The frontend will be available on the default port (usually http://localhost:5173).
+
+### Usage
+ - To register, fill out the registration form with a username and password and submit it.
+ - To log in, enter the registered username and password, and submit the login form. You will receive a JWT token.
+ - After logging in, you can access the protected route by clicking the corresponding button, which will send the JWT token in the request headers.
+
+#### Github Backend Repo
+https://github.com/iamnabeelrahman/UpSkillMadia-Tasks/tree/main/Task%2031/backend
+
+#### Deployed Frontend Url
+[https://frontend-task31.onrender.com](https://frontend-task31.onrender.com)
+
+#### Deployed Backend Url
+[https://tasks31-backend.onrender.com](https://tasks31-backend.onrender.com)
+
