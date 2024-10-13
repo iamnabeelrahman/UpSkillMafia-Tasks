@@ -39,7 +39,7 @@ export function ShowTodoList() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:8000/api/todo")
+            .get("https://todo-task28-frontend.onrender.com/api/todo")
             .then((res) => {
                 console.log(res.data);
                 setTodo(res.data);
@@ -59,13 +59,13 @@ export function ShowTodoList() {
     }
 
     function handleDelete(e) { 
-        axios.delete(`http://localhost:8000/api/todo/${e.target.name}`);
+        axios.delete(`https://todo-task28-frontend.onrender.com/api/todo/${e.target.name}`);
         setTodo((data) => data.filter((todo) => todo._id !== e.target.name));
     }
 
     //  function to mark todo as completed
     function handleComplete(id) {
-        axios.put(`http://localhost:8000/api/todo/${id}/complete`)
+        axios.put(`https://todo-task28-frontend.onrender.com/api/todo/${id}/complete`)
             .then((res) => {
                 console.log(res.data.message);
                 setUpdate(!update); // Trigger re-fetch
