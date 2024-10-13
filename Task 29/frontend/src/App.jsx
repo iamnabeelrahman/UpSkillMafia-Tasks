@@ -15,6 +15,7 @@ function App() {
 
   return (
     <div className="App">
+      <h3> Please wait for few time if video isnt playing after clicking on submit!</h3>
       {videoId && <VideoPlayer videoId={videoId}></VideoPlayer>}  <br />
 
       {/* Simple form for selecting a video */}
