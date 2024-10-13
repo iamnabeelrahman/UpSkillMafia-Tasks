@@ -52,7 +52,7 @@ During the integration of the backend and frontend, I encountered the following 
 ## Links
 
 - **Deployed Backend:** [https://upskillmadia-tasks.onrender.com/](https://upskillmadia-tasks.onrender.com/)
-- **Deployed Frontend:** [https://tasks-29-frontend.onrender.com/](https://tasks-29-frontend.onrender.com/)
+- **Deployed Frontend:** [https://tasks-29-frontend.onrender.com/](https://tasks-29-frontend.onrender.com/)  ( if video isnt playing please wait, it will take some time )
 - **Backend GitHub Repository:** [https://github.com/iamnabeelrahman/UpSkillMadia-Tasks/tree/main/Task%2029/backend](https://github.com/iamnabeelrahman/UpSkillMadia-Tasks/tree/main/Task%2029/backend)
 
 
