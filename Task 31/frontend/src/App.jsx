@@ -11,7 +11,7 @@ function App() {
   const register = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/register', { username, password });
+      await axios.post('https://tasks31-backend.onrender.com/register', { username, password });
       setMessage('Registration successful!');
     } catch (error) {
       setMessage('Registration failed.');
@@ -22,7 +22,7 @@ function App() {
   const login = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/login', { username, password });
+      const response = await axios.post('https://tasks31-backend.onrender.com/login', { username, password });
       setToken(response.data.token);
       setMessage('Login successful!');
     } catch (error) {
@@ -33,7 +33,7 @@ function App() {
   // Access protected route
   const accessProtected = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/protected', {
+      const response = await axios.get('https://tasks31-backend.onrender.com/protected', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessage(`Protected data: ${response.data.message}`);
