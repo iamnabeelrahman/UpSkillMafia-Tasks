@@ -35,7 +35,7 @@ The server will run on http://localhost:5000.
 
 3. Run the development server:
 
-The frontend will be available on the default port (usually http://localhost:3000).
+The frontend will be available on the default port (usually http://localhost:5173).
 
 ### Usage
  - To register, fill out the registration form with a username and password and submit it.
