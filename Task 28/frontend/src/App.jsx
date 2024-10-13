@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ShowTodoList } from "./Components/showTodoList";
-import { CreateTodo } from "./Components/CreateTodo";
+import { CreateTodo } from "./Components/createTodo";
 import "./App.css";
 
 function App() {
