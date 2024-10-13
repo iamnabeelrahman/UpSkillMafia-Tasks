@@ -38,6 +38,6 @@ The server will run on http://localhost:5000.
 The frontend will be available on the default port (usually http://localhost:3000).
 
 ### Usage
--To register, fill out the registration form with a username and password and submit it.
--To log in, enter the registered username and password, and submit the login form. You will receive a JWT token.
--After logging in, you can access the protected route by clicking the corresponding button, which will send the JWT token in the request headers.
+ -To register, fill out the registration form with a username and password and submit it.
+ -To log in, enter the registered username and password, and submit the login form. You will receive a JWT token.
+ -After logging in, you can access the protected route by clicking the corresponding button, which will send the JWT token in the request headers.
