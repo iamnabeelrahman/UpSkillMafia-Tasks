@@ -11,7 +11,7 @@ function Login() {
   const login = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/login', { username, password });
+      const response = await axios.post('https://tasks31-backend.onrender.com/login', { username, password });
       localStorage.setItem('token', response.data.token); // Store token in localStorage
       setMessage('Login successful!');
       navigate('/protected'); // Redirect to protected route
@@ -56,7 +56,7 @@ function Signup() {
   const register = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/register', { username, password, email });
+      await axios.post('https://tasks31-backend.onrender.com/register', { username, password, email });
       setMessage('Registration successful! Redirecting to login...');
       navigate('/login'); // Redirect to login after successful signup
     } catch (error) {
@@ -107,7 +107,7 @@ function Protected() {
     }
 
     try {
-      const response = await axios.get('http://localhost:5000/protected', {
+      const response = await axios.get('https://tasks31-backend.onrender.com/protected', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessage(`Protected data: ${response.data.message}`);
