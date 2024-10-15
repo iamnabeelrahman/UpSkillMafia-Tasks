@@ -17,6 +17,8 @@ function Login() {
       navigate('/protected'); // Redirect to protected route
     } catch (error) {
       setMessage('Login failed.');
+      console.error(error);
+
     }
   };
 
@@ -30,14 +32,14 @@ function Login() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-        /> <br>
+        /> <br />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-        /> <br>
+        /> <br />
         <button type="submit">Login</button>
       </form>
       {message && <p>{message}</p>}
@@ -61,6 +63,8 @@ function Signup() {
       navigate('/login'); // Redirect to login after successful signup
     } catch (error) {
       setMessage('Registration failed.');
+      console.error(error);
+
     }
   };
 
@@ -74,21 +78,21 @@ function Signup() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-        />
+        /> <br />
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-        />
+        /> <br />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-        />
+        /> <br />
         <button type="submit">Sign Up</button>
       </form>
       {message && <p>{message}</p>}
