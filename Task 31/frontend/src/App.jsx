@@ -30,14 +30,14 @@ function Login() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-        />
+        /> <br>
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-        />
+        /> <br>
         <button type="submit">Login</button>
       </form>
       {message && <p>{message}</p>}
