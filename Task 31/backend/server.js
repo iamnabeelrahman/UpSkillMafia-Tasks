@@ -1,29 +1,31 @@
 const express = require('express');
-const bodyParser = require('body-parser'); 
-const jwt = require('jsonwebtoken'); 
-const cors = require('cors'); 
+const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
+const cors = require('cors');
 
 const app = express();
-const PORT = 5000; 
+const PORT = 5000;
 
-app.use(bodyParser.json()); 
-app.use(cors()); 
+app.use(bodyParser.json());
+app.use(cors());
 
 let users = [];
 
 const JWT_SECRET = 'simple_secret_key';
 
+// Registration route
 app.post('/register', (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, email } = req.body;
 
-  if (!username || !password) {
-    return res.status(400).send('Please provide a username and password');
+  if (!username || !password || !email) {
+    return res.status(400).send('Please provide a username, password, and email');
   }
 
-  users.push({ username, password });
-  res.send('Registration successful!'); 
+  users.push({ username, password, email });
+  res.send('Registration successful!');
 });
 
+// Login route
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
@@ -33,13 +35,13 @@ app.post('/login', (req, res) => {
     return res.status(400).send('Invalid username or password');
   }
 
-  const token = jwt.sign({ username }, JWT_SECRET, { expiresIn: '1h' });
+  // Include the email in the token payload
+  const token = jwt.sign({ username, email: user.email }, JWT_SECRET, { expiresIn: '1h' });
 
-  // Send the token back to the frontend
   res.json({ token });
 });
 
-// 3. Protected route:
+// Protected route
 app.get('/protected', (req, res) => {
   const token = req.headers.authorization?.split(' ')[1];
 
@@ -47,12 +49,12 @@ app.get('/protected', (req, res) => {
     return res.status(403).send('You need to be logged in to access this route');
   }
 
-  // Verify the token
-  jwt.verify(token, JWT_SECRET, (err, user) => {
+  jwt.verify(token, JWT_SECRET, (err, decoded) => {
     if (err) {
       return res.status(403).send('Invalid token');
     }
-    res.json({ message: 'Welcome to the protected route!' });
+
+    res.json({ message: `Welcome to the protected route! Your email is: ${decoded.email}` });
   });
 });
 
