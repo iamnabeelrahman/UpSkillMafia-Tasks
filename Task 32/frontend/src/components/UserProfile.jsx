@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 
 function UserProfile() {
   const [name, setName] = useState("");
@@ -32,7 +34,7 @@ function UserProfile() {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/save", {
+      const response = await fetch("https://task32-backend.onrender.com/save", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,14 +53,15 @@ function UserProfile() {
       }
     } catch (error) {
       console.error("Error submitting form:", error);
+      console.log(error);
+      
       alert("An error occurred while submitting your details.");
     }
   }
 
   // If not logged in, do not render the form
   if (!isLoggedIn) {
-     <p style={{ color: 'red' }}>{error}</p>; // Display error message in red
-    return alert("You must be logged in to submit details.")
+   return  <p style={{ color: 'red' }}>{error}</p>; // Display error message in red
   }
 
   return (
@@ -93,8 +96,11 @@ function UserProfile() {
           onChange={(e) => setInstaUsername(e.target.value)}
         />
         <br />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Save" />
       </form>
+      <h5>
+        See your details <Link to="/read">here</Link>
+      </h5>
     </div>
   );
 }
