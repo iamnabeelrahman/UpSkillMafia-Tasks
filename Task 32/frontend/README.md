@@ -38,7 +38,7 @@ This is a full-stack application where users can register, log in, save details,
 ## Deployment Links
 - **Frontend GitHub Repository**: [Frontend Repo Link](https://github.com/iamnabeelrahman/UpSkillMadia-Tasks/tree/main/Task%2032/frontend)
 - **Backend GitHub Repository**: [Backend Repo Link](https://github.com/iamnabeelrahman/UpSkillMadia-Tasks/tree/main/Task%2032/backend)
-- **Deployed Frontend**: [Frontend Live](https://task-32-frontend.onrender.com/register)
+- **Deployed Frontend**: [Frontend Live](https://task-32-frontend.onrender.com/)
 - **Deployed Backend**: [Backend Live](https://task32-backend.onrender.com)
 
 Submit the Frontend repo link in Dashboard.
