@@ -7,6 +7,12 @@ This is a full-stack application where users can register, log in, save details,
 - **Backend**: Node.js, Express.js, MongoDB, Mongoose, JWT, Bcrypt, dotenv, CORS
 - **Frontend**: React.js, React Router, Vite
 
+  ## API endd points
+  - /register -> for registring a user
+  - /login -> for loging in
+  - /save ->  for saving users details ( only users with valid token can save )
+  - /read -> for reading users details ( only users with valid token can save )
+
 ## Setup Instructions
 
 ### Backend Setup:
