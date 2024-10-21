@@ -11,7 +11,7 @@ This is a full-stack application where users can register, log in, save details,
   - /register -> for registring a user
   - /login -> for loging in
   - /save ->  for saving users details ( only users with valid token can save )
-  - /read -> for reading users details ( only users with valid token can save )
+  - /read -> for reading users details ( only users with valid token can read )
 
 ## Setup Instructions
 
