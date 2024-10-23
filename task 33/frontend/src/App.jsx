@@ -6,7 +6,7 @@ function App() {
 
     const handleSetCookie = async () => {
         try {
-            const response = await fetch('http://localhost:3000/set-cookie', {
+            const response = await fetch('https://task33-backend.onrender.com/set-cookie', {
                 method: 'GET',
                 credentials: 'include',
             });
@@ -21,7 +21,7 @@ function App() {
 
     const handleGetCookie = async () => {
         try {
-            const response = await fetch('http://localhost:3000/get-cookie', {
+            const response = await fetch('https://task33-backend.onrender.com/get-cookie', {
                 method: 'GET',
                 credentials: 'include',
             });
@@ -36,7 +36,7 @@ function App() {
 
     const handleSuccess = async () => {
         try {
-            const response = await fetch('http://localhost:3000/success', {
+            const response = await fetch('https://task33-backend.onrender.com/success', {
                 method: 'GET',
             });
             const data = await response.json();
@@ -50,7 +50,7 @@ function App() {
 
     const handleCreated = async () => {
         try {
-            const response = await fetch('http://localhost:3000/created', {
+            const response = await fetch('https://task33-backend.onrender.com/created', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ function App() {
 
     const handleBadRequest = async () => {
         try {
-            const response = await fetch('http://localhost:3000/bad-request', {
+            const response = await fetch('https://task33-backend.onrender.com/bad-request', {
                 method: 'GET',
             });
             const data = await response.json();
@@ -82,7 +82,7 @@ function App() {
 
     const handleNotFound = async () => {
         try {
-            const response = await fetch('http://localhost:3000/not-found', {
+            const response = await fetch('https://task33-backend.onrender.com/not-found', {
                 method: 'GET',
             });
             const data = await response.json();
@@ -96,7 +96,7 @@ function App() {
 
     const handleServerError = async () => {
         try {
-            const response = await fetch('http://localhost:3000/server-error', {
+            const response = await fetch('https://task33-backend.onrender.com/server-error', {
                 method: 'GET',
             });
             const data = await response.json();
