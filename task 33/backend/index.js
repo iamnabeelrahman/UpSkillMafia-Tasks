@@ -6,9 +6,10 @@ const app = express();
 
 // Allow requests from the Vite frontend
 app.use(cors({
-    origin: 'http://localhost:5173', // Update this to match your Vite frontend URL
-    credentials: true, // To allow sending cookies from frontend
+    origin: true, // Allows requests from any origin
+    credentials: true, // To allow cookies from the frontend
 }));
+
 app.use(cookieParser());
 app.use(express.json());
 
@@ -16,10 +17,15 @@ const PORT = 3000;
 
 // Route to set a cookie
 app.get('/set-cookie', (req, res) => {
-    res.cookie('username', 'NabeelRahman', { httpOnly: true });
+    res.cookie('username', 'NabeelRahman', {
+        httpOnly: true,
+        secure: false, // Change to true if serving over HTTPS
+        sameSite: 'None', // Important for cross-origin requests
+    });
     res.status(200).json({ message: 'Cookie set successfully!' });
 });
 
+// Route to retrieve cookie
 // Route to retrieve cookie
 app.get('/get-cookie', (req, res) => {
     const cookie = req.cookies.username;
@@ -29,6 +35,7 @@ app.get('/get-cookie', (req, res) => {
         res.status(404).json({ message: 'No cookie found' });
     }
 });
+
 
 
 // Route for 200 response code
