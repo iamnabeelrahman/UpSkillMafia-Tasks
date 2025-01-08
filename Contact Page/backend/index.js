@@ -8,7 +8,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "../frontend", "index.html")));
 
-app.get("/", (req, res) => {
+app.get("/", (req, res) => {  // Assignment
   // send static frontend here
   res.send("this is you assignment")
 
